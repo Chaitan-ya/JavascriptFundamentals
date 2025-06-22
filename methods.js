@@ -7,23 +7,23 @@ console.log("Understanding Errors");
 //   .then((data) => console.log(data));
 
 // GET Method
-// fetch("https://randomuser.me/api")
-//   .then((response) => {
-//     if (!response.ok) {
-//       throw new Error(`Occurence of Error ${response.status}`);
-//     }
-//     return response.json();
-//   })
-//   .then((data) => {
-//     const user = data.results[0];
-//     console.log(data);
+fetch("https://randomuser.me/api")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`Occurence of Error ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    const user = data.results[0];
+    console.log(data);
 
-//     console.log(user.location.street);
-//     console.log(user.location.city);
-//   })
-//   .catch((Error) => {
-//     console.error("Check the error", error);
-//   });
+    console.log(user.location.street);
+    console.log(user.location.city);
+  })
+  .catch((Error) => {
+    console.error("Check the error", error);
+  });
 
 // POST Method
 // const newPost = ;

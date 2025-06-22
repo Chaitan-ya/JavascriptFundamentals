@@ -54,7 +54,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
 // PUT Method
 const putdata = {
   userID: 35,
-  title:'SDE',
+  title: "SDE",
   hobbies: "Playing Chess",
 };
 fetch("https://jsonplaceholder.typicode.com/posts/35", {
@@ -73,4 +73,22 @@ fetch("https://jsonplaceholder.typicode.com/posts/35", {
   .then((data) => {
     console.log(data);
   })
-  .catch(error =>{console.error("Check it ",error)})
+  .catch((error) => {
+    console.error("Check it ", error);
+  });
+// DELETE Method
+
+fetch("https://jsonplaceholder.typicode.com/posts/35", {
+  method: "DELETE",
+  headers: { "Content-Type": "application/json" },
+})
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`One ${response.status}`);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => console.error("Check the Error", error));
